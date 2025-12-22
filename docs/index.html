@@ -3,57 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>每日挖掘看板</title>
+    <title>AlphaMiner 深度投研</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        [v-cloak] { display: none; }
+        .fade-enter-active, .fade-leave-active { transition: opacity 0.5s; }
+        .fade-enter-from, .fade-leave-to { opacity: 0; }
+    </style>
 </head>
-<body class="bg-gray-100 p-4">
-    <div id="app" class="max-w-3xl mx-auto">
-        <!-- 标题 -->
-        <div class="bg-white rounded-lg shadow p-6 mb-4 text-center">
-            <h1 class="text-2xl font-bold text-blue-800">🚀 每日机会挖掘</h1>
-            <p class="text-gray-500 mt-2">{{ report.date }}</p>
-        </div>
-
-        <!-- 宏观 -->
-        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 rounded shadow-sm" v-if="report.macro">
-            <h2 class="font-bold text-lg mb-1">{{ report.macro.title }}</h2>
-            <p class="text-sm text-gray-600 mb-2">{{ report.macro.desc }}</p>
+<body class="bg-slate-100 text-slate-800">
+    <div id="app" class="max-w-5xl mx-auto p-4" v-cloak>
+        
+        <!-- 顶部通栏 -->
+        <header class="bg-white rounded-xl shadow-sm p-6 mb-6 flex flex-col md:flex-row justify-between items-center">
             <div>
-                <span v-for="ind in report.industries" class="inline-block bg-white text-blue-600 text-xs px-2 py-1 rounded mr-2 border border-blue-200">
-                    {{ ind }}
-                </span>
+                <h1 class="text-3xl font-extrabold text-indigo-700 tracking-tight">AlphaMiner 📡</h1>
+                <p class="text-slate-500 mt-1 text-sm">政策驱动型基本面量化系统</p>
             </div>
+            <div class="mt-4 md:mt-0 text-right">
+                <div class="text-xs font-bold text-slate-400 uppercase">Analysis Date</div>
+                <div class="text-xl font-mono font-bold text-slate-700">{{ report.date }}</div>
+            </div>
+        </header>
+
+        <!-- 这里的加载状态 -->
+        <div v-if="loading" class="text-center py-20 text-slate-400">
+            <p class="animate-pulse">正在连接数据中心...</p>
         </div>
 
-        <!-- 列表 -->
-        <div class="bg-white rounded-lg shadow overflow-hidden">
-            <table class="min-w-full">
-                <thead class="bg-gray-50">
-                    <tr>
-                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500">名称/代码</th>
-                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500">行业</th>
-                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500">市盈率/市值</th>
-                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500">理由</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-200">
-                    <tr v-for="item in report.stocks" :key="item.code">
-                        <td class="px-4 py-3">
-                            <div class="font-bold text-gray-900">{{ item.name }}</div>
-                            <div class="text-xs text-gray-500">{{ item.code }}</div>
-                        </td>
-                        <td class="px-4 py-3 text-sm text-gray-600">{{ item.industry }}</td>
-                        <td class="px-4 py-3">
-                            <div class="text-sm text-gray-900">{{ item.pe }} PE</div>
-                            <div class="text-xs text-gray-500">{{ item.market_cap }}</div>
-                        </td>
-                        <td class="px-4 py-3 text-sm text-green-600 font-medium">{{ item.reason }}</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div v-if="!report.stocks || report.stocks.length === 0" class="p-8 text-center text-gray-500">
-                正在等待数据生成，请稍后刷新...
+        <div v-else>
+            <!-- 1. 筛选控制台 -->
+            <div class="bg-white rounded-xl shadow-sm p-4 mb-6 sticky top-2 z-10 border border-indigo-50">
+                <div class="flex flex-wrap items-center gap-2">
+                    <span class="text-xs font-bold text-slate-400 mr-2 uppercase">行业筛选:</span>
+                    
+                    <!-- 全部按钮 -->
+                    <button 
+                        @click="currentFilter = '全部'"
+                        :class="currentFilter === '全部' ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
+                        class="px-3 py-1 rounded-full text-sm font-medium transition-colors">
+                        全部
+                    </button>
+
+                    <!-- 各行业按钮 -->
+                    <button 
+                        v-for="ind in report.all_industries" 
+                        :key="ind"
+                        @click="currentFilter = ind"
+                        :class="currentFilter === ind ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'"
+                        class="px-3 py-1 rounded-full text-sm font-medium transition-colors">
+                        {{ ind }}
+                    </button>
+                </div>
+                <div class="mt-3 text-xs text-slate-500 border-t pt-2">
+                    🔍 摘要: {{ report.summary }}
+                </div>
+            </div>
+
+            <!-- 2. 个股及逻辑展示卡片流 -->
+            <div class="grid grid-cols-1 gap-4">
+                <transition-group name="fade">
+                    <div v-for="stock in filteredStocks" :key="stock.code" class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border-l-4 border-indigo-500">
+                        <div class="p-5 flex flex-col md:flex-row justify-between">
+                            
+                            <!-- 左侧：股票基本信息 -->
+                            <div class="flex items-start w-full md:w-1/4 mb-4 md:mb-0 border-b md:border-b-0 md:border-r border-slate-100 pb-4 md:pb-0 md:pr-4">
+                                <div>
+                                    <div class="flex items-center">
+                                        <h3 class="text-xl font-bold text-slate-800">{{ stock.name }}</h3>
+                                        <span class="ml-2 text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded">{{ stock.code }}</span>
+                                    </div>
+                                    <div class="mt-2 text-sm text-slate-500 flex flex-col gap-1">
+                                        <span>🏭 行业: <b class="text-slate-700">{{ stock.industry }}</b></span>
+                                        <span>💰 市值: {{ stock.market_cap }}</span>
+                                        <span>📉 PE: <b class="text-green-600">{{ stock.pe }}</b></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 右侧：政策逻辑与解读 -->
+                            <div class="w-full md:w-3/4 md:pl-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-xs font-bold text-white bg-red-500 px-2 py-1 rounded">
+                                            {{ stock.policy_type }}
+                                        </span>
+                                        <h4 class="font-bold text-slate-700">{{ stock.policy_title }}</h4>
+                                    </div>
+                                    <!-- 链接按钮 -->
+                                    <a :href="stock.policy_url" target="_blank" class="text-xs flex items-center text-blue-500 hover:underline">
+                                        查看原文 🔗
+                                    </a>
+                                </div>
+                                
+                                <div class="bg-slate-50 rounded p-3 text-sm text-slate-600 leading-relaxed">
+                                    <span class="font-bold text-slate-800">💡 逻辑解读：</span>
+                                    {{ stock.policy_desc }}
+                                    <div class="mt-2 text-xs text-slate-400">
+                                        *基于宏观政策对于 {{ stock.industry }} 行业的直接利好，且公司估值处于合理区间。
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </transition-group>
+            </div>
+
+            <!-- 空状态 -->
+            <div v-if="filteredStocks.length === 0" class="text-center py-10 text-slate-400">
+                该分类下暂无符合严苛筛选标准的标的
             </div>
         </div>
     </div>
@@ -61,12 +121,29 @@
     <script>
         const { createApp } = Vue
         createApp({
-            data() { return { report: {} } },
+            data() {
+                return {
+                    loading: true,
+                    currentFilter: '全部',
+                    report: { stocks: [], all_industries: [] }
+                }
+            },
+            computed: {
+                filteredStocks() {
+                    if (this.currentFilter === '全部') {
+                        return this.report.stocks;
+                    }
+                    return this.report.stocks.filter(s => s.industry === this.currentFilter);
+                }
+            },
             mounted() {
-                // 加个时间戳防止缓存
                 fetch('data.json?t=' + new Date().getTime())
                     .then(res => res.json())
-                    .then(data => this.report = data)
+                    .then(data => {
+                        this.report = data;
+                        this.loading = false;
+                    })
+                    .catch(e => console.error("加载失败", e))
             }
         }).mount('#app')
     </script>
