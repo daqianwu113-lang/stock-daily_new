@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日挖掘看板</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-4">
+    <div id="app" class="max-w-3xl mx-auto">
+        <!-- 标题 -->
+        <div class="bg-white rounded-lg shadow p-6 mb-4 text-center">
+            <h1 class="text-2xl font-bold text-blue-800">🚀 每日机会挖掘</h1>
+            <p class="text-gray-500 mt-2">{{ report.date }}</p>
+        </div>
+
+        <!-- 宏观 -->
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4 rounded shadow-sm" v-if="report.macro">
+            <h2 class="font-bold text-lg mb-1">{{ report.macro.title }}</h2>
+            <p class="text-sm text-gray-600 mb-2">{{ report.macro.desc }}</p>
+            <div>
+                <span v-for="ind in report.industries" class="inline-block bg-white text-blue-600 text-xs px-2 py-1 rounded mr-2 border border-blue-200">
+                    {{ ind }}
+                </span>
+            </div>
+        </div>
+
+        <!-- 列表 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+            <table class="min-w-full">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500">名称/代码</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500">行业</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500">市盈率/市值</th>
+                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500">理由</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr v-for="item in report.stocks" :key="item.code">
+                        <td class="px-4 py-3">
+                            <div class="font-bold text-gray-900">{{ item.name }}</div>
+                            <div class="text-xs text-gray-500">{{ item.code }}</div>
+                        </td>
+                        <td class="px-4 py-3 text-sm text-gray-600">{{ item.industry }}</td>
+                        <td class="px-4 py-3">
+                            <div class="text-sm text-gray-900">{{ item.pe }} PE</div>
+                            <div class="text-xs text-gray-500">{{ item.market_cap }}</div>
+                        </td>
+                        <td class="px-4 py-3 text-sm text-green-600 font-medium">{{ item.reason }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div v-if="!report.stocks || report.stocks.length === 0" class="p-8 text-center text-gray-500">
+                正在等待数据生成，请稍后刷新...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() { return { report: {} } },
+            mounted() {
+                // 加个时间戳防止缓存
+                fetch('data.json?t=' + new Date().getTime())
+                    .then(res => res.json())
+                    .then(data => this.report = data)
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
