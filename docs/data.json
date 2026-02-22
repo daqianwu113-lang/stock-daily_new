@@ -1,5 +1,5 @@
 {
-  "date": "2026-02-21",
+  "date": "2026-02-22",
   "policies": [
     {
       "id": "p1",
@@ -42,6 +42,42 @@
     }
   ],
   "stocks": [
+    {
+      "code": "603611",
+      "name": "诺力股份",
+      "industry": "工程机械",
+      "price": 24.05,
+      "pe": "11.7",
+      "market_cap": "62.0亿",
+      "policy_title": "大规模设备更新与以旧换新",
+      "policy_url": "https://www.ndrc.gov.cn/xwdt/tzgg/",
+      "analysis": "【价值扫描】工程机械板块龙头之一。当前PE为11.7倍，市值62.0亿。在“大规模设备更新与以旧换新”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sh603611.html"
+    },
+    {
+      "code": "000528",
+      "name": "柳    工",
+      "industry": "工程机械",
+      "price": 11.44,
+      "pe": "12.0",
+      "market_cap": "232.9亿",
+      "policy_title": "大规模设备更新与以旧换新",
+      "policy_url": "https://www.ndrc.gov.cn/xwdt/tzgg/",
+      "analysis": "【价值扫描】工程机械板块龙头之一。当前PE为12.0倍，市值232.9亿。在“大规模设备更新与以旧换新”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sz000528.html"
+    },
+    {
+      "code": "600761",
+      "name": "安徽合力",
+      "industry": "工程机械",
+      "price": 22.17,
+      "pe": "13.2",
+      "market_cap": "197.5亿",
+      "policy_title": "大规模设备更新与以旧换新",
+      "policy_url": "https://www.ndrc.gov.cn/xwdt/tzgg/",
+      "analysis": "【价值扫描】工程机械板块龙头之一。当前PE为13.2倍，市值197.5亿。在“大规模设备更新与以旧换新”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sh600761.html"
+    },
     {
       "code": "300628",
       "name": "亿联网络",
