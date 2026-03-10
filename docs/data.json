@@ -1,5 +1,5 @@
 {
-  "date": "2026-03-09",
+  "date": "2026-03-10",
   "policies": [
     {
       "id": "p1",
@@ -41,5 +41,258 @@
       ]
     }
   ],
-  "stocks": []
+  "stocks": [
+    {
+      "code": "920599",
+      "name": "同力股份",
+      "industry": "工程机械",
+      "price": 20.25,
+      "pe": "10.9",
+      "market_cap": "93.7亿",
+      "policy_title": "大规模设备更新与以旧换新",
+      "policy_url": "https://www.ndrc.gov.cn/xwdt/tzgg/",
+      "analysis": "【价值扫描】工程机械板块龙头之一。当前PE为10.9倍，市值93.7亿。在“大规模设备更新与以旧换新”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sz920599.html"
+    },
+    {
+      "code": "000528",
+      "name": "柳    工",
+      "industry": "工程机械",
+      "price": 10.65,
+      "pe": "11.2",
+      "market_cap": "216.8亿",
+      "policy_title": "大规模设备更新与以旧换新",
+      "policy_url": "https://www.ndrc.gov.cn/xwdt/tzgg/",
+      "analysis": "【价值扫描】工程机械板块龙头之一。当前PE为11.2倍，市值216.8亿。在“大规模设备更新与以旧换新”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sz000528.html"
+    },
+    {
+      "code": "603611",
+      "name": "诺力股份",
+      "industry": "工程机械",
+      "price": 24.16,
+      "pe": "11.8",
+      "market_cap": "62.2亿",
+      "policy_title": "大规模设备更新与以旧换新",
+      "policy_url": "https://www.ndrc.gov.cn/xwdt/tzgg/",
+      "analysis": "【价值扫描】工程机械板块龙头之一。当前PE为11.8倍，市值62.2亿。在“大规模设备更新与以旧换新”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sh603611.html"
+    },
+    {
+      "code": "300628",
+      "name": "亿联网络",
+      "industry": "通信设备",
+      "price": 34.99,
+      "pe": "17.1",
+      "market_cap": "443.2亿",
+      "policy_title": "数字中国与算力基建",
+      "policy_url": "https://www.miit.gov.cn/jgsj/txs/index.html",
+      "analysis": "【价值扫描】通信设备板块龙头之一。当前PE为17.1倍，市值443.2亿。在“数字中国与算力基建”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sz300628.html"
+    },
+    {
+      "code": "603236",
+      "name": "移远通信",
+      "industry": "通信设备",
+      "price": 80.93,
+      "pe": "23.8",
+      "market_cap": "232.9亿",
+      "policy_title": "数字中国与算力基建",
+      "policy_url": "https://www.miit.gov.cn/jgsj/txs/index.html",
+      "analysis": "【价值扫描】通信设备板块龙头之一。当前PE为23.8倍，市值232.9亿。在“数字中国与算力基建”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sh603236.html"
+    },
+    {
+      "code": "002296",
+      "name": "辉煌科技",
+      "industry": "通信设备",
+      "price": 14.01,
+      "pe": "25.2",
+      "market_cap": "54.6亿",
+      "policy_title": "数字中国与算力基建",
+      "policy_url": "https://www.miit.gov.cn/jgsj/txs/index.html",
+      "analysis": "【价值扫描】通信设备板块龙头之一。当前PE为25.2倍，市值54.6亿。在“数字中国与算力基建”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sz002296.html"
+    },
+    {
+      "code": "002920",
+      "name": "德赛西威",
+      "industry": "软件开发",
+      "price": 115.04,
+      "pe": "28.0",
+      "market_cap": "686.6亿",
+      "policy_title": "数字中国与算力基建",
+      "policy_url": "https://www.miit.gov.cn/jgsj/txs/index.html",
+      "analysis": "【价值扫描】软件开发板块龙头之一。当前PE为28.0倍，市值686.6亿。在“数字中国与算力基建”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sz002920.html"
+    },
+    {
+      "code": "002322",
+      "name": "理工能科",
+      "industry": "软件开发",
+      "price": 14.45,
+      "pe": "28.8",
+      "market_cap": "52.8亿",
+      "policy_title": "数字中国与算力基建",
+      "policy_url": "https://www.miit.gov.cn/jgsj/txs/index.html",
+      "analysis": "【价值扫描】软件开发板块龙头之一。当前PE为28.8倍，市值52.8亿。在“数字中国与算力基建”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sz002322.html"
+    },
+    {
+      "code": "301195",
+      "name": "北路智控",
+      "industry": "软件开发",
+      "price": 34.55,
+      "pe": "32.7",
+      "market_cap": "45.6亿",
+      "policy_title": "数字中国与算力基建",
+      "policy_url": "https://www.miit.gov.cn/jgsj/txs/index.html",
+      "analysis": "【价值扫描】软件开发板块龙头之一。当前PE为32.7倍，市值45.6亿。在“数字中国与算力基建”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sz301195.html"
+    },
+    {
+      "code": "601728",
+      "name": "中国电信",
+      "industry": "通信服务",
+      "price": 5.93,
+      "pe": "13.2",
+      "market_cap": "5426.4亿",
+      "policy_title": "数字中国与算力基建",
+      "policy_url": "https://www.miit.gov.cn/jgsj/txs/index.html",
+      "analysis": "【价值扫描】通信服务板块龙头之一。当前PE为13.2倍，市值5426.4亿。在“数字中国与算力基建”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sh601728.html"
+    },
+    {
+      "code": "600050",
+      "name": "中国联通",
+      "industry": "通信服务",
+      "price": 4.95,
+      "pe": "13.2",
+      "market_cap": "1547.6亿",
+      "policy_title": "数字中国与算力基建",
+      "policy_url": "https://www.miit.gov.cn/jgsj/txs/index.html",
+      "analysis": "【价值扫描】通信服务板块龙头之一。当前PE为13.2倍，市值1547.6亿。在“数字中国与算力基建”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sh600050.html"
+    },
+    {
+      "code": "600941",
+      "name": "中国移动",
+      "industry": "通信服务",
+      "price": 94.79,
+      "pe": "13.3",
+      "market_cap": "20525.8亿",
+      "policy_title": "数字中国与算力基建",
+      "policy_url": "https://www.miit.gov.cn/jgsj/txs/index.html",
+      "analysis": "【价值扫描】通信服务板块龙头之一。当前PE为13.3倍，市值20525.8亿。在“数字中国与算力基建”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sh600941.html"
+    },
+    {
+      "code": "600062",
+      "name": "华润双鹤",
+      "industry": "化学制药",
+      "price": 18.1,
+      "pe": "10.4",
+      "market_cap": "188.0亿",
+      "policy_title": "生物医药与创新药扶持",
+      "policy_url": "https://www.nmpa.gov.cn/yaowen/index.html",
+      "analysis": "【价值扫描】化学制药板块龙头之一。当前PE为10.4倍，市值188.0亿。在“生物医药与创新药扶持”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sh600062.html"
+    },
+    {
+      "code": "600216",
+      "name": "浙江医药",
+      "industry": "化学制药",
+      "price": 16.76,
+      "pe": "12.9",
+      "market_cap": "161.2亿",
+      "policy_title": "生物医药与创新药扶持",
+      "policy_url": "https://www.nmpa.gov.cn/yaowen/index.html",
+      "analysis": "【价值扫描】化学制药板块龙头之一。当前PE为12.9倍，市值161.2亿。在“生物医药与创新药扶持”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sh600216.html"
+    },
+    {
+      "code": "002004",
+      "name": "华邦健康",
+      "industry": "化学制药",
+      "price": 5.43,
+      "pe": "13.2",
+      "market_cap": "107.5亿",
+      "policy_title": "生物医药与创新药扶持",
+      "policy_url": "https://www.nmpa.gov.cn/yaowen/index.html",
+      "analysis": "【价值扫描】化学制药板块龙头之一。当前PE为13.2倍，市值107.5亿。在“生物医药与创新药扶持”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sz002004.html"
+    },
+    {
+      "code": "600739",
+      "name": "辽宁成大",
+      "industry": "生物制品",
+      "price": 11.99,
+      "pe": "10.1",
+      "market_cap": "183.4亿",
+      "policy_title": "生物医药与创新药扶持",
+      "policy_url": "https://www.nmpa.gov.cn/yaowen/index.html",
+      "analysis": "【价值扫描】生物制品板块龙头之一。当前PE为10.1倍，市值183.4亿。在“生物医药与创新药扶持”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sh600739.html"
+    },
+    {
+      "code": "600867",
+      "name": "通化东宝",
+      "industry": "生物制品",
+      "price": 9.12,
+      "pe": "11.1",
+      "market_cap": "178.6亿",
+      "policy_title": "生物医药与创新药扶持",
+      "policy_url": "https://www.nmpa.gov.cn/yaowen/index.html",
+      "analysis": "【价值扫描】生物制品板块龙头之一。当前PE为11.1倍，市值178.6亿。在“生物医药与创新药扶持”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sh600867.html"
+    },
+    {
+      "code": "688336",
+      "name": "三生国健",
+      "industry": "生物制品",
+      "price": 58.93,
+      "pe": "12.4",
+      "market_cap": "364.2亿",
+      "policy_title": "生物医药与创新药扶持",
+      "policy_url": "https://www.nmpa.gov.cn/yaowen/index.html",
+      "analysis": "【价值扫描】生物制品板块龙头之一。当前PE为12.4倍，市值364.2亿。在“生物医药与创新药扶持”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sh688336.html"
+    },
+    {
+      "code": "002432",
+      "name": "九安医疗",
+      "industry": "医疗器械",
+      "price": 51.58,
+      "pe": "11.3",
+      "market_cap": "239.8亿",
+      "policy_title": "生物医药与创新药扶持",
+      "policy_url": "https://www.nmpa.gov.cn/yaowen/index.html",
+      "analysis": "【价值扫描】医疗器械板块龙头之一。当前PE为11.3倍，市值239.8亿。在“生物医药与创新药扶持”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sz002432.html"
+    },
+    {
+      "code": "002950",
+      "name": "奥美医疗",
+      "industry": "医疗器械",
+      "price": 10.53,
+      "pe": "14.3",
+      "market_cap": "66.7亿",
+      "policy_title": "生物医药与创新药扶持",
+      "policy_url": "https://www.nmpa.gov.cn/yaowen/index.html",
+      "analysis": "【价值扫描】医疗器械板块龙头之一。当前PE为14.3倍，市值66.7亿。在“生物医药与创新药扶持”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sz002950.html"
+    },
+    {
+      "code": "603987",
+      "name": "康德莱",
+      "industry": "医疗器械",
+      "price": 9.23,
+      "pe": "15.6",
+      "market_cap": "40.3亿",
+      "policy_title": "生物医药与创新药扶持",
+      "policy_url": "https://www.nmpa.gov.cn/yaowen/index.html",
+      "analysis": "【价值扫描】医疗器械板块龙头之一。当前PE为15.6倍，市值40.3亿。在“生物医药与创新药扶持”政策催化下，具备较高的安全边际和补涨潜力。",
+      "f10_url": "https://quote.eastmoney.com/sh603987.html"
+    }
+  ]
 }
